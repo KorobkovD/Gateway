@@ -4,14 +4,14 @@
   },
   "Routes": [
     {
-      "UpstreamPathTemplate": "/travel/ping",
-      "UpstreamHttpMethod": ["Get"],
-      "DownstreamPathTemplate": "/ping",
+      "DownstreamPathTemplate": "/{url}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [{
         "Host": "localhost",
         "Port": 5011
-      }]
+      }],
+      "UpstreamPathTemplate": "/travel/{url}",
+      "UpstreamHttpMethod": ["GET"]
     }
   ]
 }

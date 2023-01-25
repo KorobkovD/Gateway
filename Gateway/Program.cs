@@ -8,5 +8,6 @@ builder.Services.AddOcelot(builder.Configuration);
 
 var app = builder.Build();
 app.UseHttpsRedirection();
+app.UseOcelot().Wait();
 app.MapControllers();
 app.Run();
