@@ -35,7 +35,15 @@ builder.Services.AddOcelot(builder.Configuration);
 
 var app = builder.Build();
 app.UseHttpsRedirection();
-app.UseOcelot().Wait();
 app.MapControllers();
 app.UseSerilogRequestLogging();
+app.UseRouting();
+
+app.UseEndpoints(endpoints => {
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Ping}");
+});
+
+app.UseOcelot().Wait();
 app.Run();
