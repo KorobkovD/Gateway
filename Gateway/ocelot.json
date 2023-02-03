@@ -1,6 +1,6 @@
 {
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:5021"
+    "BaseUrl": "http://localhost:5030"
   },
   "Routes": [
     {
@@ -11,7 +11,7 @@
         "Port": 5011
       }],
       "UpstreamPathTemplate": "/travel/{url}",
-      "UpstreamHttpMethod": ["GET"]
+      "UpstreamHttpMethod": ["POST"]
     }
   ]
 }
